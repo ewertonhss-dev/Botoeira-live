@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d10">
+<title>Botoeira de Sons</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+<header class="topbar">
+  <div><h1>Botoeira de Sons</h1><p>50 botões • 5 × 10</p></div>
+  <div class="top-actions">
+    <button id="configBtn" class="primary" type="button">⚙ Configurar</button>
+    <button id="saveConfigBtn" class="primary save hidden" type="button">✓ Salvar configuração</button>
+    <button id="stopAll" class="secondary" type="button">■ Parar tudo</button>
+  </div>
+</header>
+<div id="configBanner" class="config-banner hidden">Modo de configuração ativo — clique em qualquer botão para adicionar, trocar ou remover o áudio.</div>
+<section class="statusbar"><span id="statusDot" class="dot"></span><span id="status">Pronto para tocar.</span></section>
+<section class="board-wrap"><div id="board" class="board"></div></section>
+<p id="hint" class="hint">Clique em um botão configurado para reproduzir o som.</p>
+</main>
+
+<dialog id="editor">
+<div class="editor-body">
+  <div class="modal-head">
+    <div><h2>Botão <span id="slotNumber"></span></h2><p>Configure o áudio deste botão.</p></div>
+    <button id="closeEditor" class="icon-btn" type="button">✕</button>
+  </div>
+  <label>Nome do botão<input id="soundName" type="text" maxlength="30" placeholder="Ex.: Buzina"></label>
+  <label>Arquivo de áudio<input id="soundFile" type="file" accept="audio/*"></label>
+  <div id="fileInfo" class="file-info">Nenhum áudio configurado.</div>
+  <div id="editorMessage" class="message"></div>
+  <div class="actions">
+    <button id="applySound" class="primary" type="button">Aplicar</button>
+    <button id="testSound" class="secondary" type="button">▶ Testar</button>
+    <button id="removeSound" class="secondary danger" type="button">Remover áudio</button>
+  </div>
+</div>
+</dialog>
+<script src="./app.js"></script>
+</body></html>
